@@ -1,2 +1,47 @@
-# fruit-veg-freshness-ai
-An AI model trained to determine the freshness of fruits and vegetables from a fed in image.
+# Freshness Classifier - Usage Guide
+
+This repository contains code for the creation, training and implementation of a model that classifies the freshness of a fruit or vegetable image as either fresh, medium fresh, or not fresh and also provides a freshness index based on the assesed image. The model is implemented in Python using Tensorflow and OpenCV libraries and uses a Transfer Learning approach by using MobileNet V2 pretrained model.
+
+## Model Description
+
+The model has been trained using a Jupyter Notebook (freshness_regression.ipynb) to classify the freshness of input fruit or vegetable images. The training process involves the use of a preprocessed dataset and a custom convolutional neural network (CNN) architecture based on the MobileNetV2 model.
+
+The MobileNetV2 model is a powerful feature extractor that has been pretrained on the ImageNet dataset. We use this model as the base and freeze its layers to prevent them from being modified during our training process. On top of the MobileNetV2 model, we add additional layers to fine-tune the model for our specific freshness classification task.
+
+## Model Architecture
+
+The model architecture is as follows:
+
+1. MobileNetV2 (up to the last convolutional layer) as the base feature extractor.
+2. BatchNormalization layer to normalize the outputs from the base model.
+3. Two SeparableConv2D layers with 64 filters each, followed by ReLU activation for feature extraction.
+4. MaxPooling2D layer with a pool size of (2, 2) to downsample the spatial dimensions.
+5. Dropout layer with a dropout rate of 40% to reduce overfitting.
+
+6. Two Conv2D layers with 128 filters each, followed by ReLU activation for further feature extraction.
+7. BatchNormalization layer to normalize the outputs from the previous layers.
+8. MaxPooling2D layer with a pool size of (2, 2) and Dropout layer with a dropout rate of 50%.
+
+9. Flatten layer to convert the 2D feature maps into a 1D feature vector.
+10. Dense layer with 128 units and ReLU activation for high-level feature learning.
+11. Dropout layer with a dropout rate of 30% to further prevent overfitting.
+
+12. Dense output layer with 1 unit and a sigmoid activation function for binary classification (fresh or not fresh).
+
+## Requirements
+
+Before using the model, ensure you have the following dependencies installed:
+
+- Python 3.10
+- Tensorflow
+- OpenCV
+- Numpy
+
+You can install the required libraries by using the following commands for conda environment:
+
+```bash
+conda install -c conda-forge tqdm -y
+conda install -c conda-forge matplotlib -y
+conda install -c conda-forge pandas -y
+conda install -c conda-forge opencv -y
+```
