@@ -4,12 +4,15 @@ from keras.models import load_model
 
 
 # Classify fresh/rotten
-def print_fresh_rotten(res):
-    threshold_fresh = 0.2                # set according to standards
-    if res < threshold_fresh:            # implement two thresholds later, for med,rotten and fresh ident
-        print("The item is FRESH!")         
+def print_fresh(res):
+    threshold_fresh = 0.10  # set according to standards
+    threshold_medium = 0.35  # set according to standards
+    if res < threshold_fresh:
+        print("The item is FRESH!")
+    elif threshold_fresh < res < threshold_medium:
+        print("The item is MEDIUM FRESH")
     else:
-        print("The item is ROTTEN")
+        print("The item is NOT FRESH")
 
 
 def pre_proc_img(image_path):
@@ -37,4 +40,4 @@ def evaluate_rotten_vs_fresh(image_path):
 # Example usage:
 img_path = 'image-to-eval.png'
 is_rotten = evaluate_rotten_vs_fresh(img_path)
-print(f'Prediction: {is_rotten}',print_fresh_rotten(is_rotten))
+print(f'Prediction: {is_rotten}',print_fresh(is_rotten))
