@@ -1,4 +1,4 @@
-# Freshness Classifier - Usage Guide
+# A Simple Freshness Classification Model (Using MobileNet V2)
 
 This repository contains code for the creation, training and implementation of a model that classifies the freshness of a fruit or vegetable image as either fresh, medium fresh, or not fresh and also provides a freshness index based on the assesed image. The model is implemented in Python using Tensorflow and OpenCV libraries and uses a Transfer Learning approach by using MobileNet V2 pretrained model.
 
