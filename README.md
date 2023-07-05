@@ -69,8 +69,8 @@ python evaluate-image.py
 
 4. The script will output the prediction and its freshness classification:
 
-###Prediction: 0.245
-###The item is MEDIUM FRESH
+`Prediction: 0.245`
+`The item is MEDIUM FRESH`
 
 Here the value `0.245` represents the model's confidence that the item is fresh. The classification is determined based on predefined thresholds.
 
