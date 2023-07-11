@@ -80,6 +80,8 @@ If you wish to customize the thresholds used for freshness classification, you c
 
 This project has been completed!
 
+The further implementation of this project into an API is listed on my profile as **freshcheck**, do have a look at that to better understand the integration of this repository.
+
 
 
 
