@@ -78,6 +78,8 @@ Here the value `0.245` represents the model's confidence that the item is fresh.
 
 If you wish to customize the thresholds used for freshness classification, you can do so by modifying the values of `threshold_fresh` and `threshold_medium` in the `evaluate-image.py` script. Adjusting these values according to your standards may lead to better predictions for your specific use case.
 
+This project has been completed!
+
 
 
 
