@@ -12,7 +12,7 @@ def print_fresh(res):
     elif threshold_fresh < res < threshold_medium:
         print("The item is MEDIUM FRESH")
     else:
-        print("The item is NOT FRESH")
+        print("The item is ROTTEN")
 
 
 def pre_proc_img(image_path):
